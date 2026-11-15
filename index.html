@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+            <h1>Welcome to Our E-commerce Store</h1>
+    </header>
+
+    <nav>
+        <div id="controls">
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Search products...">
+                <button type="submit">Search</button>
+            </form>
+            <select id="category-filter">
+                <option value="">All Categories</option>
+                <option value="clothing">Clothing</option>
+                <option value="electronics">Electronics</option>
+                <option value="home">Home</option>
+            </select>
+        </div>
+    </nav>
+
+    <main>
+        <div id="product-container">
+        </div>
+
+        <dialog id="product-modal">
+            <button id="close-modal" type="button">x</button>
+            <div id="product-details"></div>
+        </dialog>
+    </main>
+
+    <script src="ecommerce-store.js"></script>
+</body>
+</html>
