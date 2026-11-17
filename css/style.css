@@ -38,7 +38,7 @@ button:hover {
 #product-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: left;
     margin-top: 20px;
 }
 
