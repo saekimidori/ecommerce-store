@@ -15,14 +15,22 @@
         <div id="controls">
             <form id="search-form">
                 <input type="text" id="search-input" placeholder="Search products...">
+            
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                </select>
+
                 <button type="submit">Search</button>
+                <button type="button" id="clear-search">Clear</button>
+
+                <select id="sort-filter">
+                    <option value="default">Sort by</option>
+                    <option value="price-low-high">Price: Low to High</option>
+                    <option value="price-high-low">Price: High to Low</option>
+                    <option value="rating-high-low">Rating: High to Low</option>
+                    <option value="rating-low-high">Rating: Low to High</option>
+                </select>
             </form>
-            <select id="category-filter">
-                <option value="">All Categories</option>
-                <option value="clothing">Clothing</option>
-                <option value="electronics">Electronics</option>
-                <option value="home">Home</option>
-            </select>
         </div>
     </nav>
 
