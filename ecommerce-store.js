@@ -46,8 +46,10 @@ function displayProducts(products) {
             <h2>${product.title}</h2>
             <p>Rating: ${product.rating}</p>
             <p>Price: $${product.price}</p>
-            <button class="view-details">View Details</button>
-            <button class="add-to-cart">Add to Cart</button>
+            <div class="card-actions">
+                <button class="view-details">View Details</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
         `
 
         const viewDetails = productCard.querySelector('.view-details')
