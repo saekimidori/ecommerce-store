@@ -45,7 +45,7 @@ function displayProducts(products) {
             <img src="${product.images[0]}" alt="${product.title}">
             <h2>${product.title}</h2>
             <p>Rating: ${product.rating}</p>
-            <p>Price: $${product.price}</p>
+            <p class="price">$${product.price}</p>
             <div class="card-actions">
                 <button class="view-details">View Details</button>
                 <button class="add-to-cart">Add to Cart</button>
@@ -68,11 +68,15 @@ function showProductModal(product) {
     productDetails.innerHTML = `
         <img src="${product.images[0]}" alt="${product.title}">
         <h2>${product.title}</h2>
-        <p>${product.description}</p>
+        <p class="price">$${product.price}</p>
         <p>Rating: ${product.rating}</p>
-        <p>Price: $${product.price}</p>
-        <button id="view-full-details">View Full Details</button>
-        <button id="add-to-cart">Add to Cart</button>
+        <p>${product.availabilityStatus}</p>
+        <p>${product.shippingInformation}</p>
+        <p>${product.description}</p>
+        <div class="card-actions">
+            <button id="view-full-details">View Full Details</button>
+            <button id="add-to-cart">Add to Cart</button>
+        </div>
     `
     productModal.showModal()
 
