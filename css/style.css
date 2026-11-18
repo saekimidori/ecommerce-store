@@ -2,6 +2,12 @@ body {
     margin: 50px;
     font-family: bpmf huninn, sans-serif;
     font-size: 14px;
+    line-height: 1.5;
+    background-color: #d5f1f8;
+}
+
+h1 {
+    font-weight: bold;
 }
 
 .price {
@@ -11,13 +17,13 @@ body {
 #controls {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
 }
 
 #search-form input {
     padding: 10px;
     margin: 10px 0;
-    box-sizing: border-box;
+    border: 1px solid #0095c3;
+    border-radius: 10px;
 }
 
 select {
@@ -25,21 +31,29 @@ select {
     margin: 10px 10px;
     box-sizing: border-box;
     font-family: bpmf huninn, sans-serif;
+    background-color: #0095c3;
+    border: 1px solid #0095c3;
+    border-radius: 10px;
+    color: white;
 }
 
 button {
-    background-color: #00b7f4;
+    background-color: #0095c3;
     color: white;
     border: 0;
     padding: 10px 20px;
     margin-top: 10px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
     font-family: bpmf huninn, sans-serif;
 }
 
 button:hover {
-    background-color: #0095c3;
+    transform: translateX(2px) translateY(2px);
+}
+
+#controls button {
+    margin-right: 5px;
 }
 
 article button,
@@ -56,16 +70,22 @@ article button,
     grid-template-columns: repeat(5, 1fr);
     gap: 5px;
     margin-top: 20px;
+    width: auto;
 }
 
 #product-container article {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 20px;
-    width: 250px;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
+    background-color: white;
+}
+
+#product-container article:hover {
+    border: 1px solid #0095c3;
 }
 
 img {
@@ -75,16 +95,23 @@ img {
 }
 
 #product-modal {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #006f91;
+    border-radius: 10px;
     padding: 20px;
     width: 400px;
     max-width: 90%;
+    margin: auto;
 }
 
 #close-modal {
+    color: black;
+    font-size: 20px;
     border: 0;
-    padding: 5px 10px;
+    background-color: white;
     cursor: pointer;
     float: right;
+}
+
+#close-modal:hover {
+    transform: none;
 }
