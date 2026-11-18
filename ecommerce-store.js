@@ -84,6 +84,11 @@ function showProductModal(product) {
     closeModal.addEventListener('click', function() {
         productModal.close()
     })
+    productModal.addEventListener('click', function(event) {
+        if (event.target === productModal) {
+            productModal.close()
+        }
+    })
 }
 
 function filterProducts() {
