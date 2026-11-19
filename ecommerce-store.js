@@ -89,6 +89,59 @@ function showProductModal(product) {
             productModal.close()
         }
     })
+
+    const viewFullDetails = document.getElementById('view-full-details')
+    const fullProductDetails = document.getElementById('full-product-details')
+
+    viewFullDetails.addEventListener('click', function() {
+        showFullProductDetails(product)
+    })
+
+    function showFullProductDetails(product) {
+        productModal.close()
+        productContainer.style.display = 'none'
+        fullProductDetails.innerHTML = `
+            <h2>${product.title}</h2>
+            <div id="full-product-info">
+                <div id="product-image">
+                    ${product.images.map(image => 
+                        `<li><img src="${image}" alt="${product.title}"></li>`).join('')}
+                </div>
+                <div id="product-info">
+                    <p class="price">$${product.price}</p>
+                    <p>Category: ${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</p>
+                    <p>Rating: ${product.rating}</p>
+                    <p>${product.availabilityStatus}</p>
+                    <p>${product.shippingInformation}</p>
+                    <p>${product.description}</p>
+
+                    <h3>Specifications</h3>
+                    <p>Brand: ${product.brand}</p>
+                    <p>SKU: ${product.sku}</p>
+                    <p>Stock: ${product.stock}</p>
+                    <p>Warranty: ${product.warrantyInformation}</p>
+
+                    <button id="back-to-products">Back to Products</button>
+                </div>
+            </div>
+            <h4>Customer Reviews</h4>
+            <div id="customer-reviews">
+                ${product.reviews && product.reviews.length > 0 ?
+                    product.reviews.map(review => `
+                        <div class="review">
+                            <span>${new Date(review.date).toLocaleDateString()}</span>
+                            <p>
+                                <strong>${review.reviewerName}</strong> - 
+                                <span>${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</span>
+                            </p>
+                           <p>"${review.comment}"</p>
+                        </div>
+                    `).join('') :
+                    '<p>No reviews available.</p>'
+                }
+            </div>
+        `
+    }
 }
 
 function filterProducts() {

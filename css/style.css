@@ -8,10 +8,30 @@ body {
 
 h1 {
     font-weight: bold;
+    font-size: 2.3em;
+}
+
+#full-product-details h2 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.7em;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 1.5em;
 }
 
 .price {
     font-size: 1.3em;
+}
+
+#product-details .price {
+    font-weight: bold;
+    font-size: 1.9em;
 }
 
 #controls {
@@ -88,10 +108,31 @@ article button,
     border: 1px solid #0095c3;
 }
 
+#full-product-info {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    margin-top: 20px;
+    padding: 20px;
+}
+
 img {
     width: 100%;
     height: auto;
     object-fit: contain;
+}
+
+#full-product-details img {
+    width: 50%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.review {
+    border: 1px solid #0095c3;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 #product-modal {
@@ -114,4 +155,13 @@ img {
 
 #close-modal:hover {
     transform: none;
+}
+
+li {
+    list-style-type: none;
+    text-align: center;
+}
+
+.review span {
+    font-size: .8em;
 }
