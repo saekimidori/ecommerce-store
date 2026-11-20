@@ -44,7 +44,7 @@ function displayProducts(products) {
         productCard.innerHTML = `
             <img src="${product.images[0]}" alt="${product.title}">
             <h2>${product.title}</h2>
-            <p>Rating: ${product.rating}</p>
+            <p><strong>Rating:</strong> ${product.rating}</p>
             <p class="price">$${product.price}</p>
             <div class="card-actions">
                 <button class="view-details">View Details</button>
@@ -69,7 +69,7 @@ function showProductModal(product) {
         <img src="${product.images[0]}" alt="${product.title}">
         <h2>${product.title}</h2>
         <p class="price">$${product.price}</p>
-        <p>Rating: ${product.rating}</p>
+        <p><strong>Rating:</strong> ${product.rating}</p>
         <p>${product.availabilityStatus}</p>
         <p>${product.shippingInformation}</p>
         <p>${product.description}</p>
@@ -109,17 +109,17 @@ function showProductModal(product) {
                 </div>
                 <div id="product-info">
                     <p class="price">$${product.price}</p>
-                    <p>Category: ${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</p>
-                    <p>Rating: ${product.rating}</p>
+                    <p><strong>Category:</strong> ${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</p>
+                    <p><strong>Rating:</strong> ${product.rating}</p>
                     <p>${product.availabilityStatus}</p>
                     <p>${product.shippingInformation}</p>
                     <p>${product.description}</p>
 
                     <h3>Specifications</h3>
-                    <p>Brand: ${product.brand}</p>
-                    <p>SKU: ${product.sku}</p>
-                    <p>Stock: ${product.stock}</p>
-                    <p>Warranty: ${product.warrantyInformation}</p>
+                    <p><strong>Brand:</strong> ${product.brand}</p>
+                    <p><strong>SKU:</strong> ${product.sku}</p>
+                    <p><strong>Stock:</strong> ${product.stock}</p>
+                    <p><strong>Warranty:</strong> ${product.warrantyInformation}</p>
 
                     <button id="back-to-products">Back to Products</button>
                 </div>
