@@ -129,7 +129,7 @@ function showProductModal(product) {
                 ${product.reviews && product.reviews.length > 0 ?
                     product.reviews.map(review => `
                         <div class="review">
-                            <span>${new Date(review.date).toLocaleDateString()}</span>
+                            <span class="review-date">${new Date(review.date).toLocaleDateString()}</span>
                             <p>
                                 <strong>${review.reviewerName}</strong> - 
                                 <span>${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</span>
