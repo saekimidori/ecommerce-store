@@ -4,52 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce Store</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bpmf+Huninn&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-            <h1>Welcome to Our E-commerce Store</h1>
-    </header>
+    <div id="root"></div>
 
-    <nav>
-        <div id="controls">
-            <form id="search-form">
-                <input type="text" id="search-input" placeholder="Search products...">
-            
-                <select id="category-filter">
-                    <option value="">All Categories</option>
-                </select>
-
-                <button type="submit">Search</button>
-                <button type="button" id="clear-search">Clear</button>
-
-                <select id="sort-filter">
-                    <option value="default">Sort by</option>
-                    <option value="price-low-high">Price: Low to High</option>
-                    <option value="price-high-low">Price: High to Low</option>
-                    <option value="rating-high-low">Rating: High to Low</option>
-                    <option value="rating-low-high">Rating: Low to High</option>
-                </select>
-            </form>
-        </div>
-    </nav>
-
-    <main>
-        <div id="product-container">
-        </div>
-
-        <div id="full-product-details">
-        </div>
-
-        <dialog id="product-modal">
-            <button id="close-modal" type="button">x</button>
-            <div id="product-details"></div>
-        </dialog>
-    </main>
-
-    <script src="ecommerce-store.js"></script>
+    <script type="module" src="src/main.jsx"></script>
 </body>
 </html>
