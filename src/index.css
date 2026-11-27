@@ -6,6 +6,8 @@ body {
     background-color: #d5f1f8;
 }
 
+/* Headers */
+
 h1 {
     font-weight: bold;
     font-size: 2.3em;
@@ -25,6 +27,8 @@ h4 {
     font-size: 1.5em;
 }
 
+/* Prices */
+
 .price {
     font-size: 1.3em;
 }
@@ -39,12 +43,18 @@ h4 {
     font-size: 1.7em;
 }
 
+/* Controls */
+
 #controls {
     display: flex;
     justify-content: center;
 }
 
-#search-form input {
+#controls select, button {
+    height: 40px;
+}
+
+#controls input {
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #0095c3;
@@ -62,6 +72,8 @@ select {
     color: white;
 }
 
+/* Buttons */
+
 button {
     background-color: #0095c3;
     color: white;
@@ -77,10 +89,6 @@ button:hover {
     transform: translateX(2px) translateY(2px);
 }
 
-#controls button {
-    margin-right: 5px;
-}
-
 article button,
 #product-details button {
     width: 100%;
@@ -89,6 +97,8 @@ article button,
 .card-actions {
     margin-top: auto;
 }
+
+/* Product Container */
 
 #product-container {
     display: grid;
@@ -112,6 +122,8 @@ article button,
 #product-container article:hover {
     border: 1px solid #0095c3;
 }
+
+/* ------------- */
 
 #full-product-info {
     display: flex;
