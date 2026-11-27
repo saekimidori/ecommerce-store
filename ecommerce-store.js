@@ -1,5 +1,5 @@
 let products = []
-const productContainer = document.getElementById('product-container')
+
 const productModal = document.getElementById('product-modal')
 const searchForm = document.getElementById('search-form')
 const searchInput = document.getElementById('search-input')
@@ -7,60 +7,8 @@ const categoryFilter = document.getElementById('category-filter')
 const sortFilter = document.getElementById('sort-filter')
 const clearSearch = document.getElementById('clear-search')
 
-fetch('https://dummyjson.com/products')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`)
-        }
-        return response.json()
-    })
-    .then(data => {
-        products = data.products
-        displayProducts(products)
-        createCategoryOptions(products)
-    })
-    .catch(error => {
-        console.error('Error fetching data:', error)
-    })
 
-function createCategoryOptions(products) {
-    const categories = [...new Set(products.map(product => product.category))]
-    categories.forEach(category => {
-        const option = document.createElement('option')
-        option.value = category
-        option.textContent = category.charAt(0).toUpperCase() + category.slice(1)
-        categoryFilter.appendChild(option)
-    })
-}
 
-function displayProducts(products) {
-    if (products.length === 0) {
-        productContainer.innerHTML = '<p>There are no products to display.</p>'
-        return
-    }
-    products.forEach(product => {
-        const productCard = document.createElement('article')
-
-        productCard.innerHTML = `
-            <img src="${product.images[0]}" alt="${product.title}">
-            <h2>${product.title}</h2>
-            <p><strong>Rating:</strong> ${product.rating}</p>
-            <p class="price">$${product.price}</p>
-            <div class="card-actions">
-                <button class="view-details">View Details</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-        `
-
-        const viewDetails = productCard.querySelector('.view-details')
-
-        viewDetails.addEventListener('click', function() {
-            showProductModal(product)
-        })
-
-        productContainer.appendChild(productCard)
-    })
-}
 
 function showProductModal(product) {
     productDetails = document.getElementById('product-details')
