@@ -1,4 +1,4 @@
-export function Controls({products}) {
+export function Controls({products, search, onSearchChange}) {
     const categories = [...new Set(products.map(product => product.category))]
 
     return (
@@ -6,7 +6,11 @@ export function Controls({products}) {
             <nav>
                 <div id="controls">
                     <form id="search-form">
-                        <input type="text" id="search-input" placeholder="Search products..." />
+                        <input type="text" id="search-input" 
+                            value={search}
+                            placeholder="Search products..."
+                            onChange={(event) => onSearchChange(event.target.value)} 
+                        />
                     
                         <select id="category-filter">
                             <option value="all">All Categories</option>

@@ -8,6 +8,8 @@ export default function App() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
+  const [search, setSearch] = useState("")
+
   useEffect(() => {
     getProducts()
       .then(setProducts)
@@ -18,17 +20,25 @@ export default function App() {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Something went wrong: {error}</p>
 
+  const filteredProducts = products.filter(product =>
+    product.title.toLowerCase().includes(search.toLowerCase())
+  )
+
   return (
     <>
       <header>
         <h1>Welcome to Our E-commerce Store</h1>
       </header>
 
-      <Controls products={products}/>
+      <Controls 
+        products={products}
+        search={search}
+        onSearchChange={setSearch}
+      />
     
       <main>
         <div id="product-container">
-          <ProductCard products={products}/>
+          <ProductCard products={filteredProducts}/>
         </div>
 
         <div id="full-product-details">
