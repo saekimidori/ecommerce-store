@@ -9,6 +9,7 @@ export default function App() {
   const [error, setError] = useState(null)
 
   const [search, setSearch] = useState("")
+  const [category, setCategory] = useState("all")
 
   useEffect(() => {
     getProducts()
@@ -20,9 +21,14 @@ export default function App() {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Something went wrong: {error}</p>
 
-  const filteredProducts = products.filter(product =>
-    product.title.toLowerCase().includes(search.toLowerCase())
-  )
+  const filteredProducts = 
+    products.filter(product => {
+      const matchesSearch = product.title.toLowerCase().includes(search.toLowerCase())
+      const matchesCategory = category === "all" || product.category === category
+      return matchesSearch && matchesCategory
+    }
+    
+    )
 
   return (
     <>
@@ -34,6 +40,8 @@ export default function App() {
         products={products}
         search={search}
         onSearchChange={setSearch}
+        category={category}
+        onCategoryChange={setCategory}
       />
     
       <main>

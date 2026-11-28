@@ -1,4 +1,10 @@
-export function Controls({products, search, onSearchChange}) {
+export function Controls({
+    products, 
+    search, 
+    onSearchChange,
+    category,
+    onCategoryChange
+}) {
     const categories = [...new Set(products.map(product => product.category))]
 
     return (
@@ -11,13 +17,16 @@ export function Controls({products, search, onSearchChange}) {
                         onChange={(event) => onSearchChange(event.target.value)} 
                     />
                 
-                    <select id="category-filter">
+                    <select 
+                        id="category-filter"
+                        value={category}
+                        onChange={(event) => onCategoryChange(event.target.value)}
+                    >
                         <option value="all">All Categories</option>
                         {categories.map(category => (
-                            <option 
-                                value={category}
-                                key={category}
-                                >{category.charAt(0).toUpperCase() + category.slice(1)}</option>
+                            <option value={category} key={category}>
+                                {category.charAt(0).toUpperCase() + category.slice(1)}
+                            </option>
                         ))}
                     </select>
                     
